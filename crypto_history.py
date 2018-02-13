@@ -32,7 +32,6 @@ class Coins:
                 coin_url = self.coins[coin]
             except:
                 print 'Coin ' + str(coin) + ' does not exist in local database!'
-                return 1
             if start_date:
                 start_date = start_date
             else:
@@ -101,7 +100,9 @@ class Coins:
             df_all['middle_val'] = (df_all.high_val + df_all.low_val) / 2
             df_all['datetime'] = pd.to_datetime(df_all['date'])
             df_all = df_all.sort_values(by='datetime')
-        return df_all
+            return df_all
+        else:
+            return None
 
     def get_all_coins_history(self, end_date=None, start_date=None, verbose=True):
         """

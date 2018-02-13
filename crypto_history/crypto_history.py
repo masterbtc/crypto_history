@@ -55,7 +55,7 @@ class Coins:
                 else:
                     open_val = float(result.find_all('td')[1].text.replace(',', ''))
 
-                high_val = result.find_all('td')[2].text
+                high_val = result.find_all('td')[2].textoc
                 if high_val == '-':
                     high_val = None
                 else:
@@ -113,7 +113,6 @@ class Coins:
         :param verbose:
         :return:
         """
-
         infos = []
         for coin in self.get_coins():
             if verbose:
@@ -190,13 +189,11 @@ class Coins:
         self.coins_history = df_all
 
     def collect_coin_names(self, coins_url=None):
-
         """
         Collect names and urls for all of the available coins from the coinmarketcap.com
         :param coins_url: By default url is https://coinmarketcap.com/currencies/
         :return: stores dictionary to the self.coin_urls {coin_name: coin_url}
         """
-
         if coins_url:
             currency_url = coins_url
         else:
@@ -221,13 +218,21 @@ class Coins:
         self.coins = urls
 
     def get_coins(self):
-
         """
         Returns list of collected coins
         :return: list of coins
         """
-
         if self.coins:
             return self.coins.keys()
         else:
             return []
+
+    def to_csv(self, filename=None, header=True):
+        """
+        Save Coins History to the csv file
+        :param filename:
+        :param header:
+        :return:
+        """
+        if filename:
+          self.coins_history.to_csv(path_or_buf=filename, index=False, header=header)

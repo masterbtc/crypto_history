@@ -52,3 +52,31 @@ ripple_data = coins.get_coin_history(coin='ripple')
 
 print ripple_data.head()
 ```
+
+```console
+>>> [u'zcash', u'siacoin', u'factom', u'hshare', u'achain', u'eccoin',
+u'bitcore', u'ardor', u'namecoin', u'rise', u'bridgecoin', u'metaverse',
+u'salus', u'emercoin', u'litecoin', u'dimecoin', u'diamond', u'pivx',
+u'bitbay', u'lisk', u'zcoin', u'peercoin', u'burst', u'crown',
+u'digibyte', u'gamecredits', u'ripple', u'ark', u'lykke', u'particl',
+u'neo', u'nem', u'bitcoin-gold', u'experience-points', u'potcoin',
+u'bitcoin-cash', u'ethereum-classic', u'html-coin', u'nav-coin',
+u'stellar', u'deeponion', u'aeon', u'gxshares', u'groestlcoin',
+u'shift', u'ethereum', u'dogecoin', u'byteball', u'paccoin',
+u'digitalnote', u'verge', u'bitcoindark', u'cloakcoin', u'gulden',
+u'decent', u'vertcoin', u'bitcoin', u'zclassic', u'nexus',
+u'bytecoin-bcn', u'iota', u'smartcash', u'whitecoin', u'minexcoin',
+u'neblio', u'hempcoin', u'asch', u'komodo', u'viacoin', u'steem',
+u'ubiq', u'syscoin', u'bitshares', u'stratis', u'cardano', u'monacoin',
+u'library-credit', u'dash', u'steem-dollars', u'feathercoin',
+u'zencash', u'pura', u'electra', u'cryptonex', u'reddcoin',
+u'xtrabytes', u'electroneum', u'monero', u'counterparty', u'raiblocks',
+u'ion', u'decred', u'blocknet', u'waves', u'spectrecoin',
+u'einsteinium', u'nxt', u'qtum', u'skycoin', u'iocoin']
+```
+
+#### Get Full History
+
+```python
+coins.get_all_coins_history(verbose=True) # Time expensive!
+```

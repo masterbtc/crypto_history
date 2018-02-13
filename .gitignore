@@ -101,3 +101,4 @@ ENV/
 .mypy_cache/
 .idea/
 *.xml
+/crypto_history/client_secret.json

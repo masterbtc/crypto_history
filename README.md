@@ -31,7 +31,7 @@ $ pip install requirements.txt
 
 ### Basic Examples
 
-##### Initial names collecting
+#### Initial names collecting
 
 ```python
 from crypto_history import Coins

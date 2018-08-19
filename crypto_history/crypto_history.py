@@ -227,7 +227,7 @@ class Coins:
         else:
             return []
 
-    def to_csv(self, filename=None, header=True):
+    def to_csv(self, filename='coins.csv', header=True):
         """
         Save Coins History to the csv file
         :param filename:
@@ -235,4 +235,4 @@ class Coins:
         :return:
         """
         if filename:
-          self.coins_history.to_csv(path_or_buf=filename, index=False, header=header)
+            self.coins_history.to_csv(path_or_buf=filename, index=False, header=header)

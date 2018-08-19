@@ -26,7 +26,7 @@ $ git clone git@github.com:gavrilo91/crypto_history.git
 $ cd crypto_history
 $ virtualenv venv
 $ source venv/bin/activate
-$ pip install requirements.txt
+$ pip install -r requirements.txt
 ```
 
 ### Basic Examples
@@ -43,14 +43,6 @@ coins.collect_coin_names()
 
 # Print collected coin names
 print coins.get_coins()
-```
-
-#### Get Ripple data
-
-```python
-ripple_data = coins.get_coin_history(coin='ripple')
-
-print ripple_data.head()
 ```
 
 ```console
@@ -73,6 +65,29 @@ u'zencash', u'pura', u'electra', u'cryptonex', u'reddcoin',
 u'xtrabytes', u'electroneum', u'monero', u'counterparty', u'raiblocks',
 u'ion', u'decred', u'blocknet', u'waves', u'spectrecoin',
 u'einsteinium', u'nxt', u'qtum', u'skycoin', u'iocoin']
+```
+
+#### Get Ripple data
+
+```python
+ripple_data = coins.get_coin_history(coin='ripple')
+
+print ripple_data.head()
+```
+
+```cosole
+close_val coin          date  high_val   low_val  market_cap  open_val  \
+1840   0.005882  XRP  Aug 04, 2013  0.005927  0.005874  45921000.0  0.005874   
+1839   0.005613  XRP  Aug 05, 2013  0.005980  0.005613  45928400.0  0.005875   
+1838   0.004680  XRP  Aug 06, 2013  0.005661  0.004629  44067600.0  0.005637   
+1837   0.004417  XRP  Aug 07, 2013  0.004682  0.004333  36503500.0  0.004669   
+1836   0.004254  XRP  Aug 08, 2013  0.004424  0.004175  34372500.0  0.004397   
+     symbol  volume  middle_val   datetime  
+1840    XRP     NaN    0.005900 2013-08-04  
+1839    XRP     NaN    0.005796 2013-08-05  
+1838    XRP     NaN    0.005145 2013-08-06  
+1837    XRP     NaN    0.004508 2013-08-07  
+1836    XRP     NaN    0.004299 2013-08-08  
 ```
 
 #### Get Full History

@@ -1,5 +1,5 @@
 import pandas as pd
-import urllib2
+from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from datetime import datetime
 
@@ -31,7 +31,7 @@ class Coins:
             try:
                 coin_url = self.coins[coin]
             except:
-                print 'Coin ' + str(coin) + ' does not exist in local database!'
+                print('Coin ' + str(coin) + ' does not exist in local database!')
             if start_date:
                 start_date = start_date
             else:
@@ -42,7 +42,7 @@ class Coins:
                 now = str(datetime.now().date()).replace('-', '')
                 end_date = now
             coin_url = coin_url + '/historical-data/?start=' + start_date + '&end=' + end_date
-            content = urllib2.urlopen(coin_url).read()
+            content = urlopen(coin_url).read()
             soup = BeautifulSoup(content, 'html.parser')
             results = soup.find_all("tr", class_="text-right")
             infos = []
@@ -116,7 +116,7 @@ class Coins:
         infos = []
         for coin in self.get_coins():
             if verbose:
-                print "Collecting data for >> " + coin
+                print("Collecting data for >> " + coin)
             if start_date:
                 start_date = start_date
             else:
@@ -128,7 +128,7 @@ class Coins:
                 end_date = now
             coin_url = self.coins[coin]
             coin_url = coin_url + '/historical-data/?start=' + start_date + '&end=' + end_date
-            content = urllib2.urlopen(coin_url).read()
+            content = urlopen(coin_url).read()
             soup = BeautifulSoup(content, 'html.parser')
             results = soup.find_all("tr", class_="text-right")
 
@@ -199,7 +199,7 @@ class Coins:
         else:
             currency_url = 'https://coinmarketcap.com/currencies/'
         try:
-            content = urllib2.urlopen(currency_url).read()
+            content = urlopen(currency_url).read()
         except:
             print('Error reading coinmarketcap.com!')
             return 1

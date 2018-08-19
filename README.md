@@ -24,7 +24,7 @@ User can provide some special date, or just collect the whole history.
 ```bash
 $ git clone git@github.com:gavrilo91/crypto_history.git
 $ cd crypto_history
-$ virtualenv venv
+$ virtualenv -p python3 venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
@@ -42,7 +42,7 @@ coins = Coins()
 coins.collect_coin_names()
 
 # Print collected coin names
-print coins.get_coins()
+print(coins.get_coins())
 ```
 
 ```console
@@ -72,7 +72,7 @@ u'einsteinium', u'nxt', u'qtum', u'skycoin', u'iocoin']
 ```python
 ripple_data = coins.get_coin_history(coin='ripple')
 
-print ripple_data.head()
+print(ripple_data.head())
 ```
 
 ```cosole
